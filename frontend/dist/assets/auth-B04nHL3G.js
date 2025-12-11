@@ -1,0 +1,1 @@
+import{av as t}from"./el-form-item-BbKrFt7i.js";function o(r){return t({url:"/auth/login",method:"post",data:r})}function i(r){return t({url:"/auth/register",method:"post",data:r})}export{o as l,i as r};
