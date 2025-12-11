@@ -1,0 +1,119 @@
+@import 'variables.scss';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    /* Subtle mesh gradient background */
+    background-image:
+        radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.05) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(14, 165, 233, 0.05) 0px, transparent 50%);
+    background-attachment: fixed;
+    color: var(--text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition-fast);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+
+    &:hover {
+        background: #94a3b8;
+    }
+}
+
+/* Element Plus Customization - Modern Overrides */
+:root {
+    --el-color-primary: var(--color-primary);
+    --el-color-primary-light-3: var(--color-primary-light);
+    --el-color-primary-dark-2: var(--color-primary-dark);
+    --el-border-radius-base: var(--radius-md);
+    --el-border-radius-small: var(--radius-sm);
+    --el-button-font-weight: 500;
+    --el-box-shadow-light: var(--shadow-md);
+}
+
+/* Softer Inputs */
+.el-input__wrapper {
+    box-shadow: 0 0 0 1px var(--border-color) inset !important;
+    padding: 4px 12px;
+    transition: var(--transition-fast);
+
+    &:hover {
+        box-shadow: 0 0 0 1px var(--text-muted) inset !important;
+    }
+
+    &.is-focus {
+        box-shadow: 0 0 0 2px var(--color-primary-light) inset !important;
+    }
+}
+
+/* Softer Buttons */
+.el-button {
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:not(.is-text):not(.is-link):not(.is-disabled):hover {
+        transform: translateY(-1px);
+        box-shadow: var(--shadow-sm);
+    }
+
+    &:active {
+        transform: translateY(0);
+    }
+}
+
+.page-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Animations */
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.2s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+}
+
+/* Glassmorphism Utility */
+.glass-panel {
+    background: var(--surface-glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
